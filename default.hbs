@@ -65,15 +65,16 @@
         </div>
     </header>
 
-    {{#is "home"}}
-        {{#if @custom.show_featured_posts}}
-            {{> "featured"}}
-        {{/if}}
-    {{/is}}
+    {{#if @site.members_invite_only}}
+        {{#unless @member}}
+            {{> "members-only-cta"}}
+        {{else}}
+            {{> "content"}}
+        {{/unless}}
 
-    <div class="site-content">
-        {{{body}}}
-    </div>
+    {{else}}
+        {{> "content"}}
+    {{/if}}
 
     <footer class="gh-foot gh-outer">
         <div class="gh-foot-inner gh-inner">
@@ -88,7 +89,6 @@
             </div>
         </div>
     </footer>
-
 </div>
 
 {{#is "post, page"}}
