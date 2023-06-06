@@ -1,0 +1,27 @@
+.error p {
+    color: red
+}
+
+.success input, .success button {
+    display: none;
+}
+
+.success p {
+    color: green;
+}
+
+.success p::after {
+    content: "Check your email!"
+}
+
+.loading input, .loading button {
+    display: none
+}
+
+.loading p {
+    color: grey
+}
+
+.loading p::after {
+    content: "Working on it..."
+}
