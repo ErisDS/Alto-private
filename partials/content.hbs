@@ -1,3 +1,5 @@
+ {{> "header"}}
+
  {{#is "home"}}
     {{#if @custom.show_featured_posts}}
         {{> "featured"}}
@@ -7,3 +9,5 @@
 <div class="site-content">
     {{{body}}}
 </div>
+
+{{> "footer"}}
