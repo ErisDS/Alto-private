@@ -1,15 +1,15 @@
-<div class="splash" style="background:url({{@site.cover_image}})">
-
-    <div class="gh-outer">
-        <div class="gh-inner members-only-cta">
+<div class="invite-only-splash" style="background-image:url({{@site.cover_image}})">
+    <div class="invite-login-container">
+        <div class="invite-login">
             <h1>{{@site.title}}</h1>
-            <h2>This site is for members only. Sign in here</h2>
+            <p>This site is for members only. Sign in here</p>
             <form data-members-form="signin">
-                <input data-members-email type="email" required="true"/>
-                <button type="submit">Sign in</button>
-                <p data-members-error></p>
+                <div class="invite-form">
+                    <input data-members-email type="email" required="true" placeholder="your@email.com"/>
+                    <button type="submit">Sign in</button>
+                    <p data-members-error></p>
+                </div>
             </form>
         </div>
     </div>
-
 </div>

@@ -15,3 +15,186 @@
 @import "misc/owl.css";
 @import "misc/utilities.css";
 @import "misc/dark.css";
+
+/* Invite only styles */
+
+.invite-only-splash {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 10vmin;
+}
+
+.invite-only-splash::before {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 33.33vh;
+    background: rgb(0,0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+}
+
+.invite-login-container {
+    position: absolute;
+    bottom: 4vmin;
+    left: 50%;
+    margin-right: -50%;
+    max-width: 520px;
+    width: 100%;
+    transform: translateX(-50%);
+    padding: 4vmin;
+    animation: show-login 1.2s ease 0s 1;
+}
+
+.invite-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border-radius: 40px;
+    padding: 4vmin;
+    overflow: hidden;
+}
+
+@keyframes show-login {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 90px);
+    }
+    33% {
+        opacity: 0;
+        transform: translate(-50%, 90px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0px);
+    }
+}
+
+.invite-login h1,
+.invite-login p {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.invite-login h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.invite-login p {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.3em;
+}
+
+.invite-login form,
+.invite-form {
+    position: relative;
+    width: 100%;
+}
+
+.invite-form {
+    margin-top: 12px;
+}
+
+.invite-form input[type=email] {
+    outline: none;
+    border: none;
+    margin: 0;
+    width: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    padding: 4px 130px 4px 20px;
+    border-radius: 999px;
+}
+
+.invite-form input[type=email]::placeholder {
+    color: #ababab;
+}
+
+.invite-form button {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    border-radius: 999px;
+    height: 42px;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.invite-form p[data-members-error] {
+    font-size: 14.5px;
+    width: 100%;
+    color: #fff;
+    background-color: #e20;
+    padding: 8px;
+    font-weight: 500;
+    border-radius: 999px;
+    margin: 24px 0 0;
+}
+
+.invite-form p[data-members-error]:empty {
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 520px) {
+    .invite-login-container {
+        bottom: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .invite-login-container {
+        bottom: 0;
+    }
+
+    .invite-form input[type=email] {
+        height: 46px;
+    }
+
+    .invite-form button {
+        position: unset;
+        width: 100%;
+        margin-top: 12px;
+        height: 46px;
+    }
+}
