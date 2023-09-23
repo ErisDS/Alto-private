@@ -165,15 +165,50 @@
     width: 100%;
     color: #fff;
     background-color: #e20;
-    padding: 8px;
     font-weight: 500;
     border-radius: 999px;
+
+}
+
+.invite-form p[data-members-error] {
+    padding: 0;
+    margin: 0;
+}
+
+.error .invite-form p[data-members-error],
+.success .invite-form p[data-members-error],
+.loading .invite-form p[data-members-error] {
+    margin: 24px 0 0;
+    padding: 8px;
+}
+
+
+/* .success .invite-form input,
+.success .invite-form button {
+    display: none;
+} */
+
+.success .invite-form p[data-members-error] {
+    background-color: green;
+}
+
+.success .invite-form p::after {
+    content: "Yay! We've sent a login link to your email inbox :)";
     margin: 24px 0 0;
 }
 
-.invite-form p[data-members-error]:empty {
-    padding: 0;
-    margin: 0;
+/* .loading .invite-form input,
+.loading .invite-form button {
+    display: none
+} */
+
+.loading .invite-form p[data-members-error] {
+    background-color: grey
+}
+
+.loading .invite-form p::after {
+    content: "Working on it...";
+    margin: 24px 0 0;
 }
 
 @media (max-width: 520px) {
