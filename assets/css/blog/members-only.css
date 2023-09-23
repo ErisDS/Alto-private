@@ -11,7 +11,7 @@
 }
 
 .success p::after {
-    content: "Check your email!"
+    content: "Yay! We've sent a login link to your email inbox :)"
 }
 
 .loading input, .loading button {
