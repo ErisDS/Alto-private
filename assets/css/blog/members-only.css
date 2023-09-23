@@ -1,13 +1,9 @@
-.error p {
-    color: red
-}
-
 .success input, .success button {
     display: none;
 }
 
-.success p {
-    color: green;
+.success p[data-members-error] {
+    background-color: green;
 }
 
 .success p::after {
@@ -18,8 +14,8 @@
     display: none
 }
 
-.loading p {
-    color: grey
+.loading p[data-members-error] {
+    background-color: grey
 }
 
 .loading p::after {
